@@ -4,6 +4,8 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { sendDiscordContactNotification } from "@/lib/discord";
 
+export const dynamic = "force-dynamic";
+
 
 // POST - Submit contact form
 export async function POST(request: NextRequest) {

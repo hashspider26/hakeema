@@ -3,6 +3,8 @@ import { PrismaClient } from "@prisma/client";
 import { cloudinary, extractPublicId, multiDelete } from "@/lib/cloudinary";
 import { prisma } from "@/lib/prisma";
 
+export const dynamic = "force-dynamic";
+
 export async function GET(request: Request, { params }: { params: { id: string } }) {
     try {
         const product = await prisma.product.findUnique({

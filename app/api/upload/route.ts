@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { cloudinary, multiUpload } from "@/lib/cloudinary";
 
+export const dynamic = "force-dynamic";
+
 // Allow larger uploads (Vercel default is 4.5MB)
 export const maxDuration = 30;
 
