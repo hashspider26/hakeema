@@ -1,9 +1,11 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { headers } from "next/headers";
 
 export const dynamic = "force-dynamic";
 
 export async function GET(req: Request) {
+    headers(); // Accessing headers fundamentally marks this route as dynamic
     try {
         const { searchParams } = new URL(req.url);
         const filter = searchParams.get('filter') || '30d';
