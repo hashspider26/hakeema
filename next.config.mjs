@@ -23,7 +23,7 @@ const nextConfig = {
 	// Optimize for cPanel builds
 	swcMinify: true,
 	compiler: {
-		removeConsole: process.env.NODE_ENV === 'production',
+		removeConsole: false,
 	},
 	// Reduce build memory usage
 	experimental: {

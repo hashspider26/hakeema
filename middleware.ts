@@ -5,9 +5,7 @@ import { getToken } from "next-auth/jwt";
 export async function middleware(request: NextRequest) {
     const token = await getToken({
         req: request,
-        secret: process.env.NEXTAUTH_SECRET,
-        // Force cookie detection if standard check fails
-        secureCookie: process.env.NEXTAUTH_URL?.startsWith('https') || request.nextUrl.protocol === 'https:',
+        secret: process.env.NEXTAUTH_SECRET
     });
     const { pathname } = request.nextUrl;
 

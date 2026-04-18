@@ -10,27 +10,36 @@ const setupPrisma = () => {
     const url = process.env.TURSO_DATABASE_URL;
     const authToken = process.env.TURSO_AUTH_TOKEN;
 
-    if (url && authToken) {
-        try {
-            const libsql = createClient({
-                url: url,
-                authToken: authToken,
-            });
-            const adapter = new PrismaLibSQL(libsql);
-            return new PrismaClient({ adapter });
-        } catch (error) {
-            console.error("Prisma: Failed to initialize Turso adapter:", error);
-        }
+    if (!url || !authToken) {
+        console.error("Prisma: Missing TURSO_DATABASE_URL or TURSO_AUTH_TOKEN. Falling back to dummy datasource.");
+        return new PrismaClient({
+            datasources: {
+                db: {
+                    url: "file:./dev.db"
+                }
+            }
+        });
     }
 
-    // Fallback logic that prevents crashing if DATABASE_URL is missing
-    return new PrismaClient({
-        datasources: {
-            db: {
-                url: process.env.DATABASE_URL || "file:./dev.db"
+    try {
+        console.log("Prisma: Attempting Turso Connection...");
+        const libsql = createClient({
+            url: url,
+            authToken: authToken,
+        });
+        const adapter = new PrismaLibSQL(libsql);
+        console.log("Prisma: Turso connection successful");
+        return new PrismaClient({ adapter });
+    } catch (error) {
+        console.error("Prisma: Turso initialization failed:", error);
+        return new PrismaClient({
+            datasources: {
+                db: {
+                    url: "file:./dev.db"
+                }
             }
-        }
-    });
+        });
+    }
 };
 
 export const prisma = globalForPrisma.prisma ?? setupPrisma();
