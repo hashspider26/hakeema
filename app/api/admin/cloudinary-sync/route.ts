@@ -2,11 +2,13 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { cloudinary, cloudinaryConfigs, extractPublicId } from "@/lib/cloudinary";
 import { getToken } from "next-auth/jwt";
+import { headers } from "next/headers";
 
 export const dynamic = "force-dynamic";
 
 // This route ensures all images for all products are present in all Cloudinary accounts
 export async function POST(req: Request) {
+    headers(); // Force dynamic mode during build
     try {
         // 1. Auth check - only admins or valid crons can trigger sync
         const cronSecret = process.env.CRON_SECRET;
