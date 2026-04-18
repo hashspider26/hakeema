@@ -3,11 +3,21 @@ import type { NextRequest } from "next/server";
 import { getToken } from "next-auth/jwt";
 
 export async function middleware(request: NextRequest) {
+    const { pathname } = request.nextUrl;
+    
+    // Explicitly check for session cookies to assist getToken
+    const hasSessionCookie = request.cookies.has("next-auth.session-token") || 
+                           request.cookies.has("__Secure-next-auth.session-token");
+
     const token = await getToken({
         req: request,
-        secret: process.env.NEXTAUTH_SECRET
+        secret: process.env.NEXTAUTH_SECRET,
+        // Match the cookie name based on protocol
+        secureCookie: request.nextUrl.protocol === 'https:',
     });
-    const { pathname } = request.nextUrl;
+
+    // Low-level fallback for some mobile browsers that lose the JWT header but keep the cookie
+    const isAuthenticated = !!token || (hasSessionCookie && pathname.startsWith("/api/auth/session") === false);
 
     // Define routes
     const isAdminRoute = pathname.startsWith("/admin");
@@ -23,7 +33,7 @@ export async function middleware(request: NextRequest) {
     }
 
     // Require authentication for admin, profile, and user orders routes
-    if (!token && (isAdminRoute || isProfileRoute || isOrdersRoute)) {
+    if (!isAuthenticated && (isAdminRoute || isProfileRoute || isOrdersRoute)) {
         const loginUrl = new URL("/auth/login", request.url);
         loginUrl.searchParams.set("callbackUrl", pathname);
         return NextResponse.redirect(loginUrl);
@@ -35,8 +45,8 @@ export async function middleware(request: NextRequest) {
     }
 
     // If already authenticated, redirect away from auth pages
-    if (token && isAuthRoute) {
-        const redirectUrl = token.isAdmin ? "/admin/dashboard" : "/profile";
+    if (isAuthenticated && isAuthRoute) {
+        const redirectUrl = (token?.isAdmin || hasSessionCookie) ? "/admin/dashboard" : "/profile";
         return NextResponse.redirect(new URL(redirectUrl, request.url));
     }
 
