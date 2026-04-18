@@ -3,7 +3,7 @@ import { Plus } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 import { ProductList } from "@/components/admin/product-list";
 
-export const revalidate = 0;
+export const dynamic = "force-dynamic";
 
 export default async function ProductsDashboard() {
     const products = await prisma.product.findMany({

@@ -5,7 +5,7 @@ import { OrderStatusManager } from "@/components/admin/order-status-manager";
 import { DeleteOrderButton } from "@/components/admin/delete-order-button";
 import { LocalTime } from "@/components/shared/local-time";
 
-export const revalidate = 0;
+export const dynamic = "force-dynamic";
 
 export default async function OrdersPage() {
     const orders = await prisma.order.findMany({

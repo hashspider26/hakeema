@@ -11,7 +11,7 @@ function formatPrice(amount: number) {
   }).format(amount);
 }
 
-export const revalidate = 0; // Ensure fresh data on every request
+export const dynamic = "force-dynamic"; // Ensure fresh data on every request
 
 export default async function Home() {
   const featuredProducts = await prisma.product.findMany({

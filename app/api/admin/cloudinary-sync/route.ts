@@ -3,6 +3,8 @@ import { prisma } from "@/lib/prisma";
 import { cloudinary, cloudinaryConfigs, extractPublicId } from "@/lib/cloudinary";
 import { getToken } from "next-auth/jwt";
 
+export const dynamic = "force-dynamic";
+
 // This route ensures all images for all products are present in all Cloudinary accounts
 export async function POST(req: Request) {
     try {

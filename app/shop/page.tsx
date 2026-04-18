@@ -14,7 +14,7 @@ function formatPrice(amount: number) {
     }).format(amount);
 }
 
-export const revalidate = 0;
+export const dynamic = "force-dynamic"; // Ensure fresh data on every request
 
 export default async function ShopPage({
     searchParams,
