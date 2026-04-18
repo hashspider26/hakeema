@@ -12,7 +12,6 @@ const setupPrisma = () => {
 
     if (url && authToken) {
         try {
-            console.log("Prisma: Using Turso Live Database Connection");
             const libsql = createClient({
                 url: url,
                 authToken: authToken,
@@ -20,14 +19,18 @@ const setupPrisma = () => {
             const adapter = new PrismaLibSQL(libsql);
             return new PrismaClient({ adapter });
         } catch (error) {
-            console.error("Failed to initialize Turso client during build:", error);
-            // Fallback gracefully so build doesn't crash
-            return new PrismaClient();
+            console.error("Prisma: Failed to initialize Turso adapter:", error);
         }
     }
 
-    console.log("Prisma: Fallback to local SQLite connection");
-    return new PrismaClient();
+    // Fallback logic that prevents crashing if DATABASE_URL is missing
+    return new PrismaClient({
+        datasources: {
+            db: {
+                url: process.env.DATABASE_URL || "file:./dev.db"
+            }
+        }
+    });
 };
 
 export const prisma = globalForPrisma.prisma ?? setupPrisma();
