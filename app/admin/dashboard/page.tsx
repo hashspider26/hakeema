@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Package, ShoppingBag, Plus, DollarSign, Clock, AlertCircle, Tags, Mail, BarChart3, ArrowRight } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 
-export const revalidate = 0;
+export const dynamic = "force-dynamic";
 
 function formatPrice(amount: number) {
     return new Intl.NumberFormat('en-PK', {
