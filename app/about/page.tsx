@@ -1,4 +1,4 @@
-import { Sprout, Target, Award, Users, Leaf, Heart, TrendingUp, Shield } from "lucide-react";
+import { HeartPulse, Target, Award, Users, Flower2, Heart, TrendingUp, Shield } from "lucide-react";
 import Image from "next/image";
 
 export const dynamic = 'force-dynamic';
@@ -13,21 +13,21 @@ export default function AboutPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-                                <Sprout className="h-4 w-4 text-primary" />
-                                <span className="text-sm font-semibold text-primary">Since 2020</span>
+                                <HeartPulse className="h-4 w-4 text-primary" />
+                                <span className="text-sm font-semibold text-primary">Since 2018</span>
                             </div>
                             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900 dark:text-white">
-                                Growing Dreams, One Seed at a Time
+                                Pure Healing, Rooted in Nature
                             </h1>
                             <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                                At Green Valley Seeds, we're passionate about helping gardeners across Pakistan cultivate beautiful, thriving gardens with premium quality seeds and expert guidance.
+                                At EDawakhana.pk, we're dedicated to bringing the ancient wisdom of herbal medicine to the modern world, providing pure, effective, and natural remedies for a healthier lifestyle.
                             </p>
                         </div>
                         <div className="relative">
                             <div className="aspect-square rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-lg">
                                 <Image
                                     src="/uploads/vimg.jpg"
-                                    alt="Green Valley Seeds - Growing Dreams"
+                                    alt="EDawakhana.pk - Natural Healing"
                                     width={600}
                                     height={600}
                                     className="w-full h-full object-cover"
@@ -49,7 +49,7 @@ export default function AboutPage() {
                             </div>
                             <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4">Our Mission</h2>
                             <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                                To empower every Pakistani gardener with access to premium quality seeds, tools, and knowledge, making gardening accessible, enjoyable, and successful for everyone from beginners to experts.
+                                To provide authentic herbal medicines and natural wellness products that are accessible, affordable, and safe for every household in Pakistan, fostering a culture of natural healing.
                             </p>
                         </div>
 
@@ -59,7 +59,7 @@ export default function AboutPage() {
                             </div>
                             <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4">Our Vision</h2>
                             <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                                To become Pakistan's most trusted gardening partner, fostering a community of passionate gardeners who grow sustainable, organic, and beautiful gardens that enrich lives and communities.
+                                To become the most trusted digital dawakhana in Pakistan, leading the way in integrating traditional herbal wisdom with modern quality standards for the benefit of all.
                             </p>
                         </div>
                     </div>
@@ -74,19 +74,19 @@ export default function AboutPage() {
                             Our Story
                         </h2>
                         <p className="text-lg text-zinc-600 dark:text-zinc-400">
-                            From a small seed collection to Pakistan's trusted gardening partner
+                            Resurrecting Traditional Wisdom for Modern Wellness
                         </p>
                     </div>
 
                     <div className="prose prose-zinc dark:prose-invert max-w-none">
                         <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
-                            Green Valley Seeds was born from a simple passion: the love of gardening and the desire to share it with others. What started as a small collection of heirloom seeds in 2020 has grown into a comprehensive gardening resource serving thousands of customers across Pakistan.
+                            EDawakhana.pk started with a vision to preserve and promote the rich heritage of herbal medicine in Pakistan. We recognized the growing need for pure, unadulterated natural remedies in an increasingly synthetic world.
                         </p>
                         <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
-                            We noticed that many aspiring gardeners struggled to find quality seeds and reliable information. That's when we decided to bridge this gap by curating the finest seeds from around the world and providing expert guidance to help every garden flourish.
+                            Our journey began by connecting with authentic Hakeems and sourcing the finest herbs from the northern valleys to the southern plains. We bridge the gap between traditional knowledge and modern convenience.
                         </p>
                         <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                            Today, we're proud to serve a growing community of gardeners who trust us for premium seeds, gardening tools, and expert advice. Every seed we sell represents our commitment to quality, sustainability, and your gardening success.
+                            Today, we are proud to serve thousands of families who trust our supplements, oils, and remedies. Every product reflects our commitment to purity, authenticity, and your total well-being.
                         </p>
                     </div>
                 </div>
@@ -109,7 +109,7 @@ export default function AboutPage() {
                             {
                                 icon: Shield,
                                 title: "Quality First",
-                                description: "We source only the highest quality seeds, rigorously tested for germination and purity."
+                                description: "We source only the rarest and purest herbs, rigorously tested for potency and authenticity."
                             },
                             {
                                 icon: Heart,
@@ -117,14 +117,14 @@ export default function AboutPage() {
                                 description: "Your success is our success. We're here to support you every step of the way."
                             },
                             {
-                                icon: Leaf,
+                                icon: Flower2,
                                 title: "Sustainability",
-                                description: "We promote organic, eco-friendly gardening practices for a healthier planet."
+                                description: "We promote organic, eco-friendly practices that respect nature and your health."
                             },
                             {
                                 icon: Users,
                                 title: "Community",
-                                description: "Building a vibrant community of gardeners who share knowledge and passion."
+                                description: "Building a vibrant community of health-conscious individuals who share a passion for natural living."
                             }
                         ].map((value, index) => (
                             <div key={index} className="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 p-6 hover:border-primary/50 transition-all group">
@@ -171,44 +171,44 @@ export default function AboutPage() {
                 <div className="mx-auto max-w-6xl">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-4">
-                            Why Choose Green Valley Seeds?
+                            Why Choose EDawakhana.pk?
                         </h2>
                         <p className="text-lg text-zinc-600 dark:text-zinc-400">
-                            What sets us apart from the rest
+                            Pure ingredients, authentic results
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {[
                             {
-                                icon: TrendingUp,
-                                title: "High Germination Rate",
-                                description: "Our seeds are tested to ensure 85%+ germination rates, giving you the best chance of success."
+                                icon: Shield,
+                                title: "100% Authentic",
+                                description: "We guarantee the purity of every herb and ingredient in our medicine."
                             },
                             {
-                                icon: Shield,
-                                title: "Quality Guarantee",
-                                description: "100% satisfaction guaranteed. If you're not happy, we'll make it right."
+                                icon: HeartPulse,
+                                title: "Clinically Tested",
+                                description: "All remedies follow strict quality controls for safety and efficacy."
                             },
                             {
                                 icon: Users,
-                                title: "Expert Support",
-                                description: "Our team of gardening experts is always ready to help with advice and guidance."
+                                title: "Hakeem Support",
+                                description: "Access to traditional wisdom and expert advice for your health concerns."
                             },
                             {
-                                icon: Leaf,
-                                title: "Organic Options",
-                                description: "Wide selection of organic and heirloom seeds for sustainable gardening."
+                                icon: Flower2,
+                                title: "Natural Ingredients",
+                                description: "No synthetic additives or harmful chemicals—just pure nature."
                             },
                             {
                                 icon: Award,
                                 title: "Trusted Brand",
-                                description: "Thousands of satisfied customers trust us for their gardening needs."
+                                description: "A legacy of trust and thousands of satisfied, healthy customers."
                             },
                             {
                                 icon: Heart,
-                                title: "Passion Driven",
-                                description: "We're gardeners too! We only sell products we'd use in our own gardens."
+                                title: "Holistic Approach",
+                                description: "We believe in treating the person, not just the symptoms."
                             }
                         ].map((feature, index) => (
                             <div key={index} className="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 p-6 hover:shadow-lg transition-shadow">
@@ -229,10 +229,10 @@ export default function AboutPage() {
             <section className="bg-gradient-to-br from-primary to-primary/80 py-20 px-4">
                 <div className="mx-auto max-w-4xl text-center">
                     <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-                        Ready to Start Your Gardening Journey?
+                        Natural Health is Just a Step Away
                     </h2>
                     <p className="text-lg text-white/90 mb-8">
-                        Join thousands of happy gardeners across Pakistan. Browse our collection and start growing today!
+                        Join thousands of families across Pakistan choosing natural wellness. Explore our remedies today!
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <a

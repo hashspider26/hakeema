@@ -22,8 +22,8 @@ const geistMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Green Valley Seeds | Premium Gardening Store",
-  description: "Your trusted online shop for high-quality seeds, gardening tools, and more in Pakistan. Cash on delivery available.",
+  title: "eDawakhana.pk | Pure Herbal Medicines & Wellness",
+  description: "Your trusted online store for pure herbal medicines, natural remedies, and ayurvedic wellness in Pakistan. Pure. Natural. Effective.",
 };
 
 import { GoogleAnalytics } from "@next/third-parties/google";

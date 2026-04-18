@@ -262,7 +262,7 @@ function CheckoutContent() {
             <div className="border-b border-zinc-100 italic">
                 <div className="mx-auto max-w-5xl h-20 flex items-center justify-center">
                     <Link href="/" className="text-xl font-black uppercase tracking-[0.3em] flex items-center gap-2">
-                        Green Valley <span className="text-primary italic">Seeds</span>
+                        <span className="text-[#22c55e]">e</span><span className="text-[orangered]">Dawakhana.pk</span>
                     </Link>
                 </div>
             </div>

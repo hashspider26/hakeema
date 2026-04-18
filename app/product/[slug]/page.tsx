@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Sprout, Share2 } from "lucide-react";
+import { ArrowLeft, Share2 } from "lucide-react";
 import { Metadata } from "next";
 import { ImageGallery } from "@/components/shared/image-gallery";
 import { ProductActions } from "@/components/product/product-actions";
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     if (!product) {
         return {
-            title: "Product Not Found | Green Valley Seeds",
+            title: "Product Not Found | EDawakhana.pk",
         };
     }
 
@@ -37,14 +37,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     } catch (e) { }
 
     return {
-        title: `${p.title} | Green Valley Seeds`,
+        title: `${p.title} | EDawakhana.pk`,
         description: p.description.substring(0, 160),
         openGraph: {
             title: p.title,
             description: p.description,
             images: [imageUrl],
             type: "website",
-            siteName: "Green Valley Seeds",
+            siteName: "EDawakhana.pk",
         },
         twitter: {
             card: "summary_large_image",

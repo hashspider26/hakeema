@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
-import { ShoppingCart, LogIn, Menu, LogOut, Settings, User as UserIcon, Sprout, ShoppingBag } from "lucide-react";
+import { ShoppingCart, LogIn, Menu, LogOut, Settings, User as UserIcon, Flower2, ShoppingBag } from "lucide-react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { CartSheet } from "@/components/cart/cart-sheet";
@@ -17,9 +17,11 @@ export function Navbar() {
     <header className="sticky top-0 z-40 w-full border-b border-zinc-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 dark:border-zinc-800 dark:bg-black/60">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 font-bold text-xl tracking-tight text-primary transition-transform hover:scale-105">
-          <Sprout className="h-6 w-6" />
-          <span className="font-bold sm:inline">Green Valley Seeds</span>
+        <Link href="/" className="flex items-center gap-2 font-bold text-xl tracking-tight text-zinc-900 dark:text-white transition-transform hover:scale-105">
+          <Flower2 className="h-6 w-6 text-primary" />
+          <span className="font-bold sm:inline">
+            <span className="text-[#22c55e]">e</span><span className="text-[orangered]">Dawakhana.pk</span>
+          </span>
         </Link>
 
         {/* Desktop Nav */}

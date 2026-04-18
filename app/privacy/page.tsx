@@ -4,8 +4,8 @@ import Link from "next/link";
 export const dynamic = 'force-dynamic';
 
 export const metadata = {
-    title: "Privacy Policy | Green Valley Seeds",
-    description: "Privacy Policy for Green Valley Seeds - Learn how we protect and handle your personal information.",
+    title: "Privacy Policy | EDawakhana.pk",
+    description: "Privacy Policy for EDawakhana.pk - Learn how we protect and handle your personal information.",
 };
 
 export default function PrivacyPage() {
@@ -216,20 +216,20 @@ export default function PrivacyPage() {
                             <div className="bg-zinc-50 dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800 p-6 space-y-3">
                                 <div className="flex items-center gap-3">
                                     <Mail className="h-5 w-5 text-primary" />
-                                    <a href="mailto:fr56123213@gmail.com" className="text-primary hover:underline">
-                                        fr56123213@gmail.com
+                                    <a href="mailto:itsmjkniazi@gmail.com" className="text-primary hover:underline">
+                                        itsmjkniazi@gmail.com
                                     </a>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <Phone className="h-5 w-5 text-primary" />
-                                    <a href="tel:03707963625" className="text-primary hover:underline">
-                                        0370-7963625
+                                    <a href="tel:03137667636" className="text-primary hover:underline">
+                                        0313-7667636
                                     </a>
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <Shield className="h-5 w-5 text-primary mt-0.5" />
                                     <div>
-                                        <p className="font-medium">Green Valley Seeds</p>
+                                        <p className="font-medium">EDawakhana.pk</p>
                                         <p>Mianwali, Punjab, Pakistan</p>
                                     </div>
                                 </div>

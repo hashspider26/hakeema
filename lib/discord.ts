@@ -59,7 +59,7 @@ export async function sendDiscordOrderNotification(order: any) {
             ],
             timestamp: new Date().toISOString(),
             footer: {
-                text: "Green Valley Seeds • Order Notification System",
+                text: "EDawakhana.pk • Order Notification System",
             }
         };
 
@@ -77,8 +77,8 @@ export async function sendDiscordOrderNotification(order: any) {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                username: "Green Valley Order Bot",
-                avatar_url: "https://greenvalleyseeds.pk/icon.svg",
+                username: "EDawakhana Order Bot",
+                avatar_url: "https://edawakhana.pk/icon.svg",
                 embeds: [embed]
             })
         });
@@ -142,7 +142,7 @@ export async function sendDiscordContactNotification(contact: any) {
             ],
             timestamp: new Date().toISOString(),
             footer: {
-                text: "Green Valley Seeds • Support Notification System",
+                text: "EDawakhana.pk • Support Notification System",
             }
         };
 
@@ -152,8 +152,8 @@ export async function sendDiscordContactNotification(contact: any) {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                username: "Green Valley Support Bot",
-                avatar_url: "https://greenvalleyseeds.pk/icon.svg",
+                username: "EDawakhana Support Bot",
+                avatar_url: "https://edawakhana.pk/icon.svg",
                 embeds: [embed]
             })
         });

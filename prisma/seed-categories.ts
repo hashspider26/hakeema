@@ -3,7 +3,7 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-const categories = ["Seeds", "Tools", "Pots", "Fertilizers"];
+const categories = ["Herbal Medicines", "Pure Honey", "Essential Oils", "Supplements", "Natural Beauty"];
 
 async function main() {
     console.log('Seeding categories...');

@@ -1,7 +1,7 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { redirect } from "next/navigation";
-import { User as UserIcon, ShieldCheck, ShoppingBag, Sprout } from "lucide-react";
+import { User as UserIcon, ShieldCheck, ShoppingBag, Flower2 } from "lucide-react";
 import Link from "next/link";
 import { ProfileEditor } from "@/components/shared/profile-editor";
 
@@ -63,10 +63,10 @@ export default async function ProfilePage() {
                             <div className="absolute -right-10 -bottom-10 h-40 w-40 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors duration-500" />
                             <div className="relative">
                                 <h3 className="font-bold text-primary text-lg mb-3 flex items-center gap-2">
-                                    <Sprout className="h-6 w-6" /> Welcome to Green Valley Seeds!
+                                    <Flower2 className="h-6 w-6" /> Welcome to eDawakhana.pk!
                                 </h3>
                                 <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-2xl">
-                                    Ready to grow? Keep your shipping information up to date to ensure your seeds reach you as quickly as possible. We&apos;re happy to have you with us.
+                                    Ready to start your natural healing journey? Keep your shipping information up to date to ensure your remedies reach you as quickly as possible. We&apos;re happy to have you with us.
                                 </p>
                             </div>
                         </div>

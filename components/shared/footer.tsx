@@ -3,17 +3,19 @@ export function Footer() {
     <footer className="border-t border-zinc-200 bg-zinc-50/50 py-12 text-sm text-zinc-600 dark:border-zinc-800 dark:bg-black dark:text-zinc-400">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 md:grid-cols-4">
         <div className="flex flex-col gap-4">
-          <span className="font-bold text-lg text-primary">Green Valley Seeds</span>
+          <span className="font-bold text-lg text-zinc-900 dark:text-white">
+            <span className="text-[#22c55e]">e</span><span className="text-[orangered]">Dawakhana.pk</span>
+          </span>
           <p className="text-zinc-500">
-            Bringing nature to your doorstep. Wide variety of high-quality seeds and gardening tools.
+            Your trusted partner in natural wellness. Providing pure herbal medicines and authentic organic remedies.
           </p>
         </div>
 
         <div className="flex flex-col gap-2">
           <h3 className="font-semibold text-zinc-900 dark:text-white">Shop</h3>
-          <a href="/shop?category=seeds" className="hover:text-primary transition-colors">Seeds</a>
-          <a href="/shop?category=tools" className="hover:text-primary transition-colors">Tools</a>
-          <a href="/shop?category=pots" className="hover:text-primary transition-colors">Pots & Planters</a>
+          <a href="/shop?category=medicines" className="hover:text-primary transition-colors">Herbal Medicines</a>
+          <a href="/shop?category=honey" className="hover:text-primary transition-colors">Pure Honey</a>
+          <a href="/shop?category=oils" className="hover:text-primary transition-colors">Natural Oils</a>
         </div>
 
         <div className="flex flex-col gap-2">
@@ -26,12 +28,12 @@ export function Footer() {
         <div className="flex flex-col gap-2">
           <h3 className="font-semibold text-zinc-900 dark:text-white">Contact</h3>
           <p>Mianwali, Punjab, Pakistan</p>
-          <p>0370-7963625</p>
-          <p>fr56123213@gmail.com</p>
+          <p>0313-7667636</p>
+          <p>itsmjkniazi@gmail.com</p>
         </div>
       </div>
       <div className="mx-auto mt-12 max-w-6xl border-t border-zinc-200 pt-8 px-4 text-center dark:border-zinc-800">
-        <p>© {new Date().getFullYear()} Green Valley Seeds. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} <span className="text-[#22c55e]">e</span><span className="text-[orangered]">Dawakhana.pk</span>. All rights reserved.</p>
       </div>
     </footer>
   );

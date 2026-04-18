@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
-import { Gift, Sprout } from "lucide-react";
+import { Flower2 } from "lucide-react";
 import { ProductCard } from "@/components/product/product-card";
 import { Suspense } from "react";
 import { ProductGridSkeleton } from "@/components/shared/loading-skeletons";
@@ -87,19 +87,11 @@ export default async function ShopPage({
             <div className="bg-white dark:bg-black border-b border-zinc-200 dark:border-zinc-800 py-8 px-4">
                 <div className="mx-auto max-w-6xl">
                     <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white">Shop</h1>
-                    <p className="text-zinc-500 mt-2">Browse our collection of seeds and tools.</p>
+                    <p className="text-zinc-500 mt-2">Explore our collection of natural remedies and herbal medicines.</p>
                 </div>
             </div>
 
-            {/* Offer Banner */}
-            <div className="mx-auto max-w-6xl px-4 mt-6">
-                <div className="flex items-center gap-3 rounded-xl bg-primary/10 border border-primary/20 px-4 py-3">
-                    <Gift className="h-6 w-6 text-primary flex-shrink-0" />
-                    <p className="text-sm font-bold text-zinc-800 dark:text-zinc-200">
-                        Receive a surprise gift on orders over {formatPrice(1000)}!
-                    </p>
-                </div>
-            </div>
+
 
             <div className="mx-auto max-w-6xl px-4 mt-8 flex flex-col md:flex-row gap-8">
 
@@ -162,10 +154,10 @@ export default async function ShopPage({
                             </div>
                         ) : (
                             <div className="flex flex-col items-center justify-center py-20 text-center">
-                                <Sprout className="h-12 w-12 text-zinc-300 mb-4" />
+                                <Flower2 className="h-12 w-12 text-zinc-300 mb-4" />
                                 <h3 className="text-lg font-medium text-zinc-900 dark:text-white">No products found</h3>
                                 <p className="text-zinc-500 max-w-sm mt-2">
-                                    We couldn't find any products in this category. Try checking back later or browsing all products.
+                                    We couldn't find any remedies in this category. Try checking back later or browsing all products.
                                 </p>
                                 <Link href="/shop" className="mt-6 inline-flex h-9 items-center justify-center rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-zinc-50 shadow hover:bg-zinc-900/90 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-50/90">
                                     Clear Filters

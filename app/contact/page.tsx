@@ -96,8 +96,8 @@ export default function ContactPage() {
                                 </div>
                                 <div>
                                     <h3 className="font-semibold text-zinc-900 dark:text-white mb-1">Email</h3>
-                                    <a href="mailto:fr56123213@gmail.com" className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-primary transition-colors">
-                                        fr56123213@gmail.com
+                                    <a href="mailto:itsmjkniazi@gmail.com" className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-primary transition-colors">
+                                        itsmjkniazi@gmail.com
                                     </a>
                                 </div>
                             </div>
@@ -109,8 +109,8 @@ export default function ContactPage() {
                                 </div>
                                 <div>
                                     <h3 className="font-semibold text-zinc-900 dark:text-white mb-1">Phone</h3>
-                                    <a href="tel:+923707963625" className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-primary transition-colors">
-                                        0370-7963625
+                                    <a href="tel:+923137667636" className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-primary transition-colors">
+                                        0313-7667636
                                     </a>
                                 </div>
                             </div>
@@ -123,7 +123,7 @@ export default function ContactPage() {
                                 <div>
                                     <h3 className="font-semibold text-zinc-900 dark:text-white mb-1">Address</h3>
                                     <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                                        Green Valley Seeds<br />
+                                        EDawakhana.pk<br />
                                         Mianwali, Punjab<br />
                                         Pakistan
                                     </p>
@@ -305,8 +305,8 @@ export default function ContactPage() {
                                 a: "Yes, we have a 14-day return policy for unopened products. Please contact us for return instructions."
                             },
                             {
-                                q: "Do you provide gardening advice?",
-                                a: "Absolutely! Our team is happy to provide guidance on seed selection, planting, and care. Just reach out!"
+                                q: "Do you provide herbal guidance?",
+                                a: "Absolutely! Our team is happy to provide guidance on remedy selection, usage, and natural health tips. Just reach out!"
                             }
                         ].map((faq, index) => (
                             <details key={index} className="group bg-zinc-50 dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 p-6">

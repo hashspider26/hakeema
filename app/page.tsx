@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Leaf, Truck, ShieldCheck, Sprout } from "lucide-react";
+import { ArrowRight, Flower2, Truck, ShieldCheck } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 import { ProductCard } from "@/components/product/product-card";
 
@@ -34,14 +34,14 @@ export default async function Home() {
         </div>
         <div className="mx-auto max-w-6xl text-center relative z-10">
           <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
-            <Sprout className="h-4 w-4" />
-            <span>Premium Quality Seeds</span>
+            <Flower2 className="h-4 w-4" />
+            <span>Pure Herbal Medicines</span>
           </div>
           <h1 className="text-4xl font-extrabold tracking-tight text-zinc-900 sm:text-5xl md:text-6xl dark:text-white mb-6">
-            Grow Your Own <span className="text-primary">Green Valley</span>
+            Your Trusted <span className="text-[#22c55e]">e</span>-<span className="text-[orangered]">Dawakhana</span>
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-zinc-600 dark:text-zinc-300 mb-8">
-            Shop the best quality vegetable seeds, flower seeds, and gardening tools in Pakistan.
+            Shop the pure quality herbal medicines, natural remedies, and ayurvedic wellness products in Pakistan.
             Delivered straight to your doorstep with Cash on Delivery.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -66,10 +66,10 @@ export default async function Home() {
         <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
           <div className="flex flex-col items-center text-center gap-3">
             <div className="p-3 bg-green-50 rounded-full text-green-600 dark:bg-green-900/20">
-              <Leaf className="h-6 w-6" />
+              <Flower2 className="h-6 w-6" />
             </div>
             <h3 className="font-semibold text-lg">Organic & Pure</h3>
-            <p className="text-zinc-600 text-sm">100% organic seeds sourced from the best farms.</p>
+            <p className="text-zinc-600 text-sm">100% natural herbal ingredients sourced from pure origins.</p>
           </div>
           <div className="flex flex-col items-center text-center gap-3">
             <div className="p-3 bg-blue-50 rounded-full text-blue-600 dark:bg-blue-900/20">
@@ -83,7 +83,7 @@ export default async function Home() {
               <ShieldCheck className="h-6 w-6" />
             </div>
             <h3 className="font-semibold text-lg">Quality Guarantee</h3>
-            <p className="text-zinc-600 text-sm">High germination rate or your money back.</p>
+            <p className="text-zinc-600 text-sm">Purest herbal quality or your money back.</p>
           </div>
         </div>
       </section>
