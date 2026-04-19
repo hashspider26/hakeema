@@ -226,14 +226,8 @@ function CheckoutContent() {
                                 <div className="space-y-3">
                                     <div className="text-xs">
                                         <p className="font-bold text-zinc-900">Easypaisa</p>
-                                        <p className="text-zinc-500">Account Title: <span className="font-medium text-zinc-900">Faisal Raza</span></p>
-                                        <p className="text-zinc-500">Account Number: <span className="font-mono font-bold text-zinc-900">03081158620</span></p>
-                                    </div>
-                                    
-                                    <div className="text-xs">
-                                        <p className="font-bold text-zinc-900">MCB Bank</p>
-                                        <p className="text-zinc-500">Account Title: <span className="font-medium text-zinc-900">Faisal Raza</span></p>
-                                        <p className="text-zinc-500">Account Number: <span className="font-mono font-bold text-zinc-900">1343607001010465</span></p>
+                                        <p className="text-zinc-500">Account Title: <span className="font-medium text-zinc-900">Jawad Khan</span></p>
+                                        <p className="text-zinc-500">Account Number: <span className="font-mono font-bold text-zinc-900">03137667636</span></p>
                                     </div>
                                 </div>
 
@@ -242,7 +236,7 @@ function CheckoutContent() {
                                     
                                     <div>
                                         <p className="font-bold text-red-600 uppercase tracking-wider mb-1">Action Required</p>
-                                        <p>Send a screenshot of the payment to WhatsApp <span className="font-bold text-zinc-900">03081158620</span> along with Order ID <span className="font-black text-zinc-900">#{confirmedOrderId}</span> to confirm your order.</p>
+                                        <p>Send a screenshot of the payment to WhatsApp <span className="font-bold text-zinc-900">03137667636</span> along with Order ID <span className="font-black text-zinc-900">#{confirmedOrderId}</span> to confirm your order.</p>
                                     </div>
                                 </div>
                             </div>
