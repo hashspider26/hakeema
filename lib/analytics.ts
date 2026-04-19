@@ -13,6 +13,19 @@ declare global {
 /**
  * Standard Analytics Events (GA4 + Meta Pixel + Internal)
  */
+const getFbq = () => {
+    if (typeof window === "undefined") return null;
+    return (window as any).fbq || (window as any)._fbq;
+};
+
+const safeFbq = (...args: any[]) => {
+    const fbq = getFbq();
+    if (typeof fbq === "function") {
+        fbq(...args);
+    } else {
+        console.warn("📊 Meta Pixel: fbq not found, event queued or dropped", args);
+    }
+};
 
 export const trackViewItem = (product: { id: string; title: string; price: number }) => {
     // Google Analytics
@@ -29,31 +42,13 @@ export const trackViewItem = (product: { id: string; title: string; price: numbe
     });
 
     // Meta Pixel - ViewContent event (Product Viewed)
-    if (typeof window !== "undefined" && typeof window.fbq !== "undefined") {
-        try {
-            window.fbq("track", "ViewContent", {
-                content_ids: [product.id],
-                content_name: product.title,
-                content_type: "product",
-                value: product.price,
-                currency: "PKR",
-            });
-            console.log("📊 Meta Pixel: ViewContent tracked", product.title);
-        } catch (error) {
-            console.error("Meta Pixel ViewContent error:", error);
-        }
-    } else {
-        // Queue event if pixel not loaded yet (fbq queue handles this automatically)
-        if (typeof window !== "undefined" && typeof (window as any)._fbq !== "undefined") {
-            (window as any)._fbq("track", "ViewContent", {
-                content_ids: [product.id],
-                content_name: product.title,
-                content_type: "product",
-                value: product.price,
-                currency: "PKR",
-            });
-        }
-    }
+    safeFbq("track", "ViewContent", {
+        content_ids: [product.id],
+        content_name: product.title,
+        content_type: "product",
+        value: product.price,
+        currency: "PKR",
+    });
 
     // Internal Tracking
     trackEvent('VIEW_PRODUCT', {
@@ -77,31 +72,13 @@ export const trackAddToCart = (product: { id: string; title: string; price: numb
     });
 
     // Meta Pixel - AddToCart event
-    if (typeof window !== "undefined" && typeof window.fbq !== "undefined") {
-        try {
-            window.fbq("track", "AddToCart", {
-                content_ids: [product.id],
-                content_name: product.title,
-                content_type: "product",
-                value: product.price * quantity,
-                currency: "PKR",
-            });
-            console.log("📊 Meta Pixel: AddToCart tracked", product.title, "Qty:", quantity);
-        } catch (error) {
-            console.error("Meta Pixel AddToCart error:", error);
-        }
-    } else {
-        // Queue event if pixel not loaded yet
-        if (typeof window !== "undefined" && typeof (window as any)._fbq !== "undefined") {
-            (window as any)._fbq("track", "AddToCart", {
-                content_ids: [product.id],
-                content_name: product.title,
-                content_type: "product",
-                value: product.price * quantity,
-                currency: "PKR",
-            });
-        }
-    }
+    safeFbq("track", "AddToCart", {
+        content_ids: [product.id],
+        content_name: product.title,
+        content_type: "product",
+        value: product.price * quantity,
+        currency: "PKR",
+    });
 
     // Internal Tracking
     trackEvent('ADD_TO_CART', {
@@ -124,16 +101,14 @@ export const trackBeginCheckout = (items: any[], total: number) => {
         }))
     });
 
-    // Meta Pixel
-    if (typeof window.fbq !== "undefined") {
-        window.fbq("track", "InitiateCheckout", {
-            content_ids: items.map(item => item.id || item.productId),
-            content_type: "product",
-            value: total,
-            currency: "PKR",
-            num_items: items.reduce((acc, item) => acc + item.quantity, 0),
-        });
-    }
+    // Meta Pixel - InitiateCheckout
+    safeFbq("track", "InitiateCheckout", {
+        content_ids: items.map(item => item.id || item.productId),
+        content_type: "product",
+        value: total,
+        currency: "PKR",
+        num_items: items.reduce((acc, item) => acc + item.quantity, 0),
+    });
 
     // Internal Tracking
     trackEvent('INITIATE_CHECKOUT', {
@@ -170,30 +145,15 @@ export const trackPurchase = (orderId: string, items: any[], total: number) => {
         }))
     });
 
-    // Meta Pixel - Purchase event (with Deduplication ID)
-    if (typeof window !== "undefined") {
-        try {
-            // Standard fbq function (handles queueing automatically)
-            const fb = (window as any).fbq || (window as any)._fbq;
-            
-            if (typeof fb === "function") {
-                fb("track", "Purchase", {
-                    content_ids: items.map(item => item.id || item.productId),
-                    content_name: items.map(item => item.title || "Product").join(", "),
-                    content_type: "product",
-                    value: total,
-                    currency: "PKR",
-                    num_items: items.reduce((acc, item) => acc + item.quantity, 0),
-                }, { eventID: orderId }); // eventID is CRITICAL for deduplication
-
-                console.log("📊 Meta Pixel: Purchase tracked (Deduplicated)", "Order:", orderId, "Total:", total);
-            } else {
-                console.warn("Meta Pixel (fbq) not found on window");
-            }
-        } catch (error) {
-            console.error("Meta Pixel Purchase error:", error);
-        }
-    }
+    // Meta Pixel - Purchase event
+    safeFbq("track", "Purchase", {
+        content_ids: items.map(item => item.id || item.productId),
+        content_name: items.map(item => item.title || "Product").join(", "),
+        content_type: "product",
+        value: total,
+        currency: "PKR",
+        num_items: items.reduce((acc, item) => acc + item.quantity, 0),
+    }, { eventID: orderId });
 
     // Internal Tracking
     trackEvent('PURCHASE', {
